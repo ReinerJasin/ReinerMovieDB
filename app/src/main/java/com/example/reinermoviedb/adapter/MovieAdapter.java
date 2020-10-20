@@ -23,9 +23,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
 
     private Context context;
     private List<Movie> listMovie;
+
     private List<Movie> getListMovie() {
         return listMovie;
     }
+
     public void setListMovie(List<Movie> listMovie) {
         this.listMovie = listMovie;
     }
