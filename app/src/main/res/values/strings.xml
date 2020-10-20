@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ReinerMovieDB</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movies">fragment_detail</string>
+    <string name="tv_shows">fragment_tv_show</string>
+</resources>
