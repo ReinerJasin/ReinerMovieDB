@@ -1,6 +1,5 @@
 package com.example.reinermoviedb.ui.main.detail;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,12 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.reinermoviedb.R;
-import com.example.reinermoviedb.adapter.TvShowAdapter;
 import com.example.reinermoviedb.model.Cast;
-import com.example.reinermoviedb.model.TvShow;
 import com.example.reinermoviedb.util.Constant;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DetailCastAdapter  extends RecyclerView.Adapter<DetailCastAdapter.ViewHolder> {

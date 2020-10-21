@@ -15,11 +15,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.reinermoviedb.R;
-import com.example.reinermoviedb.adapter.MovieAdapter;
 import com.example.reinermoviedb.adapter.TvShowAdapter;
 import com.example.reinermoviedb.model.Movie;
 import com.example.reinermoviedb.model.TvShow;
-import com.example.reinermoviedb.ui.main.tvShow.TvShowViewModel;
 
 import java.util.List;
 

@@ -8,8 +8,6 @@ import com.example.reinermoviedb.model.Cast;
 import com.example.reinermoviedb.model.CastResponse;
 import com.example.reinermoviedb.model.Genre;
 import com.example.reinermoviedb.model.GenreResponse;
-import com.example.reinermoviedb.model.Movie;
-import com.example.reinermoviedb.model.MovieResponse;
 import com.example.reinermoviedb.model.TvShow;
 import com.example.reinermoviedb.model.TvShowResponse;
 import com.example.reinermoviedb.network.ApiEndpoints;
@@ -18,7 +16,6 @@ import com.example.reinermoviedb.util.Constant;
 
 import java.util.List;
 
-import butterknife.internal.Constants;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
