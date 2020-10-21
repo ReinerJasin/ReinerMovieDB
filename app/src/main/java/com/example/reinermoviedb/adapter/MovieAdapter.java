@@ -54,15 +54,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(final MovieAdapter.CardViewViewHolder holder, int position) {
-        final Movie movie = getListMovie().get(position);
-        Glide.with(context).load(movie.getPoster()).centerCrop().into(holder.img);
+        Movie movie = getListMovie().get(position);
+        Glide.with(context).load(movie.getCover()).centerCrop().into(holder.img);
         holder.lbl_title.setText(movie.getTitle());
         holder.lbl_vote.setText(movie.getVote_average());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavDirections action = MovieFragmentDirections.actionDetailFragment(movie);
+                NavDirections action = MovieFragmentDirections.actionDetailFragment(movie, null);
                 Navigation.findNavController(v).navigate(action);
             }
         });

@@ -4,6 +4,10 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.reinermoviedb.model.Cast;
+import com.example.reinermoviedb.model.CastResponse;
+import com.example.reinermoviedb.model.Genre;
+import com.example.reinermoviedb.model.GenreResponse;
 import com.example.reinermoviedb.model.Movie;
 import com.example.reinermoviedb.model.MovieResponse;
 import com.example.reinermoviedb.network.ApiEndpoints;
@@ -27,7 +31,7 @@ public class MovieRepository {
 //        this.apiEndpoints = apiEndpoints;
 //    }
 
-    private MovieRepository () {
+    private MovieRepository() {
         service = RetrofitService.getInstance();
     }
 
@@ -39,7 +43,7 @@ public class MovieRepository {
 //    }
 
 
-    public static MovieRepository getInstance(){
+    public static MovieRepository getInstance() {
         if (movieRepository == null) {
             movieRepository = new MovieRepository();
         }
@@ -68,5 +72,53 @@ public class MovieRepository {
         });
 
         return listMovie;
+    }
+
+
+    public MutableLiveData<List<Genre>> getGenres(int id){
+        MutableLiveData<List<Genre>> listGenres = new MutableLiveData<>();
+
+        service.getGenre(Constant.Type.MOVIES, id).enqueue(new Callback<GenreResponse>() {
+            @Override
+            public void onResponse(Call<GenreResponse> call, Response<GenreResponse> response) {
+                Log.d(TAG, "onResponse: " + response.code());
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        Log.d(TAG, "onResponse: " + response.body().getGenres().size());
+                        listGenres.postValue(response.body().getGenres());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GenreResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getMessage());
+            }
+        });
+        return listGenres;
+    }
+
+    public MutableLiveData<List<Cast>> getCasts(int id) {
+        MutableLiveData<List<Cast>> listCasts = new MutableLiveData<>();
+
+        service.getCast(Constant.Type.MOVIES, id).enqueue(new Callback<CastResponse>() {
+            @Override
+            public void onResponse(Call<CastResponse> call, Response<CastResponse> response) {
+                Log.d(TAG, "onResponse: " + response.code());
+                if (response.isSuccessful()) {
+                    if (response.body() != null) {
+                        Log.d(TAG, "onResponse: " + response.body().getCasts().size());
+                        listCasts.postValue(response.body().getCasts());
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CastResponse> call, Throwable t) {
+                Log.d(TAG, "onFailure: " + t.getMessage());
+            }
+        });
+
+        return listCasts;
     }
 }

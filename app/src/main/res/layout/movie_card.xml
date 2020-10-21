@@ -64,7 +64,7 @@
                 android:fontFamily="@font/bree_serif"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="10.0"
+                android:text="-"
                 android:textColor="@color/Color1"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"

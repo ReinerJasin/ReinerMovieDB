@@ -8,6 +8,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class TvShow implements Parcelable{
 
+    @SerializedName("id")
+    private String id_show;
+
     @SerializedName("popularity")
     private String popularity;
 
@@ -33,7 +36,8 @@ public class TvShow implements Parcelable{
 
     }
 
-    public TvShow(String popularity, String poster, String cover, String name, String description, String releaseDate, String vote_average) {
+    public TvShow(String id_show, String popularity, String poster, String cover, String name, String description, String releaseDate, String vote_average) {
+        this.id_show = id_show;
         this.popularity = popularity;
         this.poster = poster;
         this.cover = cover;
@@ -44,6 +48,7 @@ public class TvShow implements Parcelable{
     }
 
     protected TvShow(Parcel in) {
+        id_show = in.readString();
         popularity = in.readString();
         poster = in.readString();
         cover = in.readString();
@@ -65,6 +70,14 @@ public class TvShow implements Parcelable{
         }
     };
 
+    public String getId_show() {
+        return id_show;
+    }
+
+    public void setId_show(String id_show) {
+        this.id_show = id_show;
+    }
+
     public String getPopularity() {
         return popularity;
     }
@@ -82,7 +95,7 @@ public class TvShow implements Parcelable{
     }
 
     public String getCover() {
-        return cover;
+        return Constant.IMG_BASE_URL + cover;
     }
 
     public void setCover(String cover) {
@@ -128,6 +141,7 @@ public class TvShow implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id_show);
         dest.writeString(popularity);
         dest.writeString(poster);
         dest.writeString(cover);

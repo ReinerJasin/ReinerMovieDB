@@ -5,19 +5,29 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Color1"
     android:fillViewport="true">
 
     <ImageView
         android:id="@+id/imageViewAdapter"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/Color2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_conversion_absoluteHeight="0dp"
         tools:layout_conversion_absoluteWidth="411dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewAdapter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gradient" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -98,7 +108,6 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/bree_serif"
-            android:text="Documentary | Horror | Mystery"
             android:textColor="@color/Color1"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/nestedScrollView2"
@@ -138,20 +147,33 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/bree_serif"
+                    android:text="Description"
+                    android:textColor="@color/Color1"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
                     android:id="@+id/detail_description"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:fontFamily="@font/bree_serif"
-                    android:text="A lowly utility worker is called to the future by a mysterious radio signal, he must leave his dying wife to embark on a journey that will force him to face his deepest fears in an attempt to change the fabric of reality and save humankind from its greatest environmental crisis yet"
                     android:textColor="@color/Color1"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
 
                 <TextView
                     android:id="@+id/detail_cast"
@@ -162,10 +184,22 @@
                     android:fontFamily="@font/bree_serif"
                     android:text="Cast"
                     android:textColor="@color/Color1"
-                    android:textSize="18sp"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/detail_description" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_cast"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/detail_cast" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
@@ -173,7 +207,7 @@
             android:id="@+id/imageView2"
             android:layout_width="120dp"
             android:layout_height="180dp"
-            android:background="@color/Color1"
+            android:background="@color/Color4"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

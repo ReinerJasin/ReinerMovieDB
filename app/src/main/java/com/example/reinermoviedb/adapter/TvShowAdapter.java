@@ -10,12 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.reinermoviedb.R;
 import com.example.reinermoviedb.model.Movie;
 import com.example.reinermoviedb.model.TvShow;
+import com.example.reinermoviedb.ui.main.movie.MovieFragmentDirections;
+import com.example.reinermoviedb.ui.main.tvShow.TvShowFragmentDirections;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +51,16 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewVi
     @SuppressLint("ResourceAsColor")
     @Override
     public void onBindViewHolder(final TvShowAdapter.CardViewViewHolder holder, int position) {
-        final TvShow tvShow = getListTvShow().get(position);
-        Glide.with(context).load(tvShow.getPoster()).centerCrop().into(holder.img);
+        TvShow tvShow = getListTvShow().get(position);
+        Glide.with(context).load(tvShow.getCover()).centerCrop().into(holder.img);
         holder.lbl_title.setText(tvShow.getName());
         holder.lbl_vote.setText(tvShow.getVote_average());
 //        Log.d("Movie",movie.getPoster());
+
+        holder.itemView.setOnClickListener(v -> {
+            NavDirections action = TvShowFragmentDirections.actionDetailFragment(null, tvShow);
+            Navigation.findNavController(v).navigate(action);
+        });
     }
     @NonNull
     @Override
