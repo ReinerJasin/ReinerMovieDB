@@ -8,16 +8,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.reinermoviedb.R;
 import com.example.reinermoviedb.model.Movie;
+import com.example.reinermoviedb.ui.main.movie.MovieFragmentDirections;
+import com.example.reinermoviedb.ui.main.movie.MovieViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewViewHolder>{
 
@@ -50,7 +58,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
         Glide.with(context).load(movie.getPoster()).centerCrop().into(holder.img);
         holder.lbl_title.setText(movie.getTitle());
         holder.lbl_vote.setText(movie.getVote_average());
-        Log.d("Movie",movie.getPoster());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavDirections action = MovieFragmentDirections.actionDetailFragment(movie);
+                Navigation.findNavController(v).navigate(action);
+            }
+        });
+//        Log.d("Movie",movie.getPoster());
     }
 @NonNull
     @Override
