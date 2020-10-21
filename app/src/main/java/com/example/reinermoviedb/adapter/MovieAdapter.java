@@ -21,9 +21,7 @@ import com.example.reinermoviedb.ui.main.movie.MovieFragmentDirections;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewViewHolder>{
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewViewHolder> {
 
     private Context context;
     private List<Movie> listMovie;
@@ -35,6 +33,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
     public void setListMovie(List<Movie> listMovie) {
         this.listMovie = listMovie;
     }
+
     public MovieAdapter(Context context) {
         this.listMovie = new ArrayList<Movie>();
         this.context = context;
@@ -64,14 +63,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewView
         });
 //        Log.d("Movie",movie.getPoster());
     }
-@NonNull
+
+    @NonNull
     @Override
     public int getItemCount() {
         return getListMovie().size();
     }
 
 
-    class CardViewViewHolder extends RecyclerView.ViewHolder{
+    class CardViewViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView lbl_title;
         TextView lbl_vote;

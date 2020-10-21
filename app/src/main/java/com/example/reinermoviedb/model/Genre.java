@@ -12,7 +12,7 @@ public class Genre implements Parcelable {
     @SerializedName("name")
     private String nama;
 
-    public Genre () {
+    public Genre() {
     }
 
     public Genre(String id, String nama) {

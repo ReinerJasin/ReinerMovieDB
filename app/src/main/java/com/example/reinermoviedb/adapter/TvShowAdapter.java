@@ -21,7 +21,7 @@ import com.example.reinermoviedb.ui.main.tvShow.TvShowFragmentDirections;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewViewHolder>{
+public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewViewHolder> {
 
     private Context context;
     private List<TvShow> listTvShow;
@@ -33,6 +33,7 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewVi
     public void setListTvShow(List<TvShow> listTvShow) {
         this.listTvShow = listTvShow;
     }
+
     public TvShowAdapter(Context context) {
         this.listTvShow = new ArrayList<TvShow>();
         this.context = context;
@@ -59,6 +60,7 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewVi
             Navigation.findNavController(v).navigate(action);
         });
     }
+
     @NonNull
     @Override
     public int getItemCount() {
@@ -66,7 +68,7 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewVi
     }
 
 
-    class CardViewViewHolder extends RecyclerView.ViewHolder{
+    class CardViewViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView lbl_title;
         TextView lbl_vote;

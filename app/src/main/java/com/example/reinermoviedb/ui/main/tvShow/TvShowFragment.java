@@ -63,7 +63,7 @@ public class TvShowFragment extends Fragment {
     }
 
     private Observer<List<TvShow>> observeViewModel = tvshows -> {
-        if (tvshows != null){
+        if (tvshows != null) {
 //            Movie movie = movies.get(0);
 //            button.setText(movie.getTitle());
 //            Toast.makeText(requireActivity(), movie.getTitle(), Toast.LENGTH_SHORT).show();

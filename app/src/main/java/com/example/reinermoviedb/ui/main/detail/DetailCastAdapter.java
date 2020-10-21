@@ -17,7 +17,7 @@ import com.example.reinermoviedb.util.Constant;
 
 import java.util.List;
 
-public class DetailCastAdapter  extends RecyclerView.Adapter<DetailCastAdapter.ViewHolder> {
+public class DetailCastAdapter extends RecyclerView.Adapter<DetailCastAdapter.ViewHolder> {
 
     private Context context;
     private List<Cast> castData;

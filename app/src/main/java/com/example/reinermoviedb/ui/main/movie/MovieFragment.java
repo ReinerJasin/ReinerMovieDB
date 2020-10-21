@@ -62,15 +62,15 @@ public class MovieFragment extends Fragment {
     }
 
     private Observer<List<Movie>> observeViewModel = movies -> {
-        if (movies != null){
+        if (movies != null) {
 //            Movie movie = movies.get(0);
 //            button.setText(movie.getTitle());
 //            Toast.makeText(requireActivity(), movie.getTitle(), Toast.LENGTH_SHORT).show();
-                // set adapter
-                adapter.setListMovie(movies);
-                adapter.notifyDataSetChanged();
-                recyclerView.setAdapter(adapter);
-                // add adapter ro recyclerview
+            // set adapter
+            adapter.setListMovie(movies);
+            adapter.notifyDataSetChanged();
+            recyclerView.setAdapter(adapter);
+            // add adapter ro recyclerview
         }
     };
 }

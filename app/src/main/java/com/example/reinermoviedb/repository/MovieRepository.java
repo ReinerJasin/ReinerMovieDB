@@ -74,7 +74,7 @@ public class MovieRepository {
     }
 
 
-    public MutableLiveData<List<Genre>> getGenres(int id){
+    public MutableLiveData<List<Genre>> getGenres(int id) {
         MutableLiveData<List<Genre>> listGenres = new MutableLiveData<>();
 
         service.getGenre(Constant.Type.MOVIES, id).enqueue(new Callback<GenreResponse>() {

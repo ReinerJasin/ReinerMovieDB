@@ -29,15 +29,15 @@ public class MainActivity extends AppCompatActivity {
         navController = Navigation.findNavController(this, R.id.fragment2);
 
         navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
-            if (destination.getId() == R.id.nav_movie || destination.getId() == R.id.nav_tv){
+            if (destination.getId() == R.id.nav_movie || destination.getId() == R.id.nav_tv) {
                 navigationView.setVisibility(View.VISIBLE);
-            }else{
+            } else {
                 navigationView.setVisibility(View.GONE);
             }
         });
 
         NavigationUI.setupActionBarWithNavController(this, navController, configuration);
-        NavigationUI.setupWithNavController(navigationView,navController);
+        NavigationUI.setupWithNavController(navigationView, navController);
 
     }
 

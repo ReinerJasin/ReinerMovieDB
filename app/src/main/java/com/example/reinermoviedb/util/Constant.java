@@ -3,6 +3,7 @@ package com.example.reinermoviedb.util;
 import androidx.annotation.StringDef;
 
 import java.lang.annotation.Retention;
+
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
 public class Constant {

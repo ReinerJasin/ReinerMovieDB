@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.example.reinermoviedb.util.Constant;
 import com.google.gson.annotations.SerializedName;
 
-public class TvShow implements Parcelable{
+public class TvShow implements Parcelable {
 
     @SerializedName("id")
     private String id_show;
@@ -32,7 +32,7 @@ public class TvShow implements Parcelable{
     @SerializedName("vote_average")
     private String vote_average;
 
-    public TvShow(){
+    public TvShow() {
 
     }
 

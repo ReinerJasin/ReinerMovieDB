@@ -30,7 +30,7 @@ public class TvShowRepository {
 //        this.apiEndpoints = apiEndpoints;
 //    }
 
-    private TvShowRepository () {
+    private TvShowRepository() {
         service = RetrofitService.getInstance();
     }
 
@@ -42,7 +42,7 @@ public class TvShowRepository {
 //    }
 
 
-    public static TvShowRepository getInstance(){
+    public static TvShowRepository getInstance() {
         if (tvShowRepository == null) {
             tvShowRepository = new TvShowRepository();
         }

@@ -105,12 +105,12 @@ public class DetailFragment extends Fragment {
 //        });
     }
 
-    private void observeShowViewModel (int idShow){
-        viewModel.getTvShowGenre(idShow).observe(requireActivity(), genres ->{
-            if(genres != null){
-                for(int i = 0; i<genres.size(); i++){
+    private void observeShowViewModel(int idShow) {
+        viewModel.getTvShowGenre(idShow).observe(requireActivity(), genres -> {
+            if (genres != null) {
+                for (int i = 0; i < genres.size(); i++) {
                     Genre g = genres.get(i);
-                    if(i < genres.size() - 1) {
+                    if (i < genres.size() - 1) {
                         genre.append(g.getNama() + "|");
                     } else {
                         genre.append(g.getNama());
@@ -120,7 +120,7 @@ public class DetailFragment extends Fragment {
         });
 
         viewModel.getShowCast(idShow).observe(requireActivity(), casts -> {
-            if (casts != null){
+            if (casts != null) {
                 adapter.setCastData(casts);
                 adapter.notifyDataSetChanged();
                 rv.setAdapter(adapter);
@@ -165,9 +165,9 @@ public class DetailFragment extends Fragment {
         Glide.with(getActivity()).load(movie.getPoster()).into(cover);
         Glide.with(getActivity()).load(movie.getPoster()).into(background);
         adult.setVisibility(View.VISIBLE);
-        if(movie.getAdult().equalsIgnoreCase("false")){
+        if (movie.getAdult().equalsIgnoreCase("false")) {
             adult.setText("All age");
-        }else{
+        } else {
             adult.setText("Adult");
         }
         title.setText(movie.getTitle());

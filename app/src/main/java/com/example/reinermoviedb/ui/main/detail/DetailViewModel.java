@@ -20,9 +20,13 @@ public class DetailViewModel extends ViewModel {
         tvShowRepository = TvShowRepository.getInstance();
     }
 
-    public LiveData<List<Genre>> getMovieGenre(int id) { return movieRepository.getGenres(id); }
+    public LiveData<List<Genre>> getMovieGenre(int id) {
+        return movieRepository.getGenres(id);
+    }
 
-    public LiveData<List<Genre>> getTvShowGenre(int id) { return tvShowRepository.getGenres(id); }
+    public LiveData<List<Genre>> getTvShowGenre(int id) {
+        return tvShowRepository.getGenres(id);
+    }
 
     public LiveData<List<Cast>> getShowCast(int id) {
         return tvShowRepository.getCasts(id);

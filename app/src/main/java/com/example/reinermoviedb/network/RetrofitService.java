@@ -41,19 +41,19 @@ public class RetrofitService {
         return service;
     }
 
-    public Call<MovieResponse> getMovies(){
+    public Call<MovieResponse> getMovies() {
         return api.getMovies(Constant.API_KEY);
     }
 
-    public Call<TvShowResponse> getTvShow(){
+    public Call<TvShowResponse> getTvShow() {
         return api.getTvShow(Constant.API_KEY);
     }
 
-    public Call<GenreResponse> getGenre(String type, int id){
+    public Call<GenreResponse> getGenre(String type, int id) {
         return api.getGenres(type, id, Constant.API_KEY);
     }
 
-    public Call<CastResponse> getCast(String type, int id){
+    public Call<CastResponse> getCast(String type, int id) {
         return api.getCasts(type, id, Constant.API_KEY);
     }
 }

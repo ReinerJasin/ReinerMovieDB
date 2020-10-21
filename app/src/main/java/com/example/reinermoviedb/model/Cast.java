@@ -15,7 +15,7 @@ public class Cast implements Parcelable {
     @SerializedName("profile_path")
     private String img_url;
 
-    public Cast(){
+    public Cast() {
 
     }
 

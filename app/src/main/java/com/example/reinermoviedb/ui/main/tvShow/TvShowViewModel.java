@@ -16,7 +16,7 @@ public class TvShowViewModel extends ViewModel {
         repository = TvShowRepository.getInstance();
     }
 
-    public LiveData<List<TvShow>> getTvShowCollection(){
+    public LiveData<List<TvShow>> getTvShowCollection() {
         return repository.getTvShowCollection();
     }
 }
