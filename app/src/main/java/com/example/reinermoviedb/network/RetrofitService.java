@@ -1,6 +1,7 @@
 package com.example.reinermoviedb.network;
 
 import com.example.reinermoviedb.model.MovieResponse;
+import com.example.reinermoviedb.model.TvShowResponse;
 import com.example.reinermoviedb.util.Constant;
 
 import retrofit2.Call;
@@ -40,5 +41,9 @@ public class RetrofitService {
 
     public Call<MovieResponse> getMovies(){
         return api.getMovies(Constant.API_KEY);
+    }
+
+    public Call<TvShowResponse> getTvShow(){
+        return api.getTvShow(Constant.API_KEY);
     }
 }

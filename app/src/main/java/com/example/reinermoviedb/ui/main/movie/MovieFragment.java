@@ -55,7 +55,6 @@ public class MovieFragment extends Fragment {
         adapter = new MovieAdapter(getContext());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(adapter);
 
         viewModel = ViewModelProviders.of(requireActivity()).get(MovieViewModel.class);
         viewModel.getMovieCollection().observe(requireActivity(), observeViewModel);
@@ -75,7 +74,7 @@ public class MovieFragment extends Fragment {
                 // set adapter
                 adapter.setListMovie(movies);
                 adapter.notifyDataSetChanged();
-//                recyclerView.setAdapter(adapter);
+                recyclerView.setAdapter(adapter);
                 // add adapter ro recyclerview
         }
     };

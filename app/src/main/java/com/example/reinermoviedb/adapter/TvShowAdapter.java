@@ -15,47 +15,48 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.reinermoviedb.R;
 import com.example.reinermoviedb.model.Movie;
+import com.example.reinermoviedb.model.TvShow;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.CardViewViewHolder>{
+public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.CardViewViewHolder>{
 
     private Context context;
-    private List<Movie> listMovie;
+    private List<TvShow> listTvShow;
 
-    private List<Movie> getListMovie() {
-        return listMovie;
+    private List<TvShow> getListTvShow() {
+        return listTvShow;
     }
 
-    public void setListMovie(List<Movie> listMovie) {
-        this.listMovie = listMovie;
+    public void setListTvShow(List<TvShow> listTvShow) {
+        this.listTvShow = listTvShow;
     }
-    public MovieAdapter(Context context) {
-        this.listMovie = new ArrayList<Movie>();
+    public TvShowAdapter(Context context) {
+        this.listTvShow = new ArrayList<TvShow>();
         this.context = context;
     }
 
     @NonNull
     @Override
-    public MovieAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TvShowAdapter.CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.movie_card, parent, false);
-        return new MovieAdapter.CardViewViewHolder(view);
+        return new TvShowAdapter.CardViewViewHolder(view);
     }
 
     @SuppressLint("ResourceAsColor")
     @Override
-    public void onBindViewHolder(final MovieAdapter.CardViewViewHolder holder, int position) {
-        final Movie movie = getListMovie().get(position);
-        Glide.with(context).load(movie.getPoster()).centerCrop().into(holder.img);
-        holder.lbl_title.setText(movie.getTitle());
-        holder.lbl_vote.setText(movie.getVote_average());
-        Log.d("Movie",movie.getPoster());
+    public void onBindViewHolder(final TvShowAdapter.CardViewViewHolder holder, int position) {
+        final TvShow tvShow = getListTvShow().get(position);
+        Glide.with(context).load(tvShow.getPoster()).centerCrop().into(holder.img);
+        holder.lbl_title.setText(tvShow.getName());
+        holder.lbl_vote.setText(tvShow.getVote_average());
+//        Log.d("Movie",movie.getPoster());
     }
-@NonNull
+    @NonNull
     @Override
     public int getItemCount() {
-        return getListMovie().size();
+        return getListTvShow().size();
     }
 
 

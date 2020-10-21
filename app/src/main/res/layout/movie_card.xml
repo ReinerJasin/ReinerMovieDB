@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/Color2"
     tools:context=".adapter.MovieAdapter">
 
     <androidx.cardview.widget.CardView
@@ -11,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,12 +22,14 @@
             android:id="@+id/cons_cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:backgroundTint="@color/Color1"
             android:paddingBottom="8dp">
 
             <ImageView
                 android:id="@+id/imageViewAdapter"
                 android:layout_width="0dp"
-                android:layout_height="113dp"
+                android:layout_height="240dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
@@ -41,13 +44,30 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/lobster"
                 android:maxLines="1"
+                android:text="Title"
+                android:textColor="@color/Color5"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/lbl_vote"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageViewAdapter" />
+
+            <TextView
+                android:id="@+id/lbl_vote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/Color4"
+                android:fontFamily="@font/lobster"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:text="TextView"
-                android:textColor="@android:color/black"
+                android:textColor="@color/Color1"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewAdapter" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
