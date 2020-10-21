@@ -2,4 +2,4 @@
 
 This is my first application that uses MVVM Architecture.
 
-![AppImage](https://raw.githubusercontent.com/ReinerJasin/ReinerMovieDB/main/ReiCinema_img.jpg)
+![AppImage](https://raw.githubusercontent.com/ReinerJasin/ReinerMovieDB/master/ReiCinema_img.jpg)
